@@ -1,18 +1,29 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Hello , I am HEK</h1>
+    <p>
+      this is a live presentation for some components i created using vuejs 
+       
+    </p>
+    <p>
+      you can use the nav to choose what component to try  
+    </p>
+    <p>
+      i hope you find it benificial  
+    </p>
+      
+
   </div>
+
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+  name: 'Home'
+  
 }
 </script>
+

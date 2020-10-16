@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+
       <router-link to="/"> Home </router-link> 
       <router-link to="/Menus"> Collapsible menus </router-link>
     </div>
@@ -43,15 +44,18 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: stretch;
+  align-items: stretch;
   background-color: #ececec;
   box-shadow: 2px 2px 4px #ececec ;
 
 }
 #view {
   flex : 0.85;
-
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
 }
 
 #nav a {

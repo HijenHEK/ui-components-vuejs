@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
     <h1>Hello , I am HEK</h1>
     <p>
       this is a live presentation for some components i created using vuejs 

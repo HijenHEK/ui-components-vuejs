@@ -11,6 +11,7 @@
      </div>
      <div class="col">
        <h2>For lists and links</h2>
+        <DropMenu />
 
      </div>
    </div>
@@ -20,12 +21,14 @@
 import HorizontalMenu from '../components/HorizontalMenu.vue'
 import VerticalMenu from '../components/VerticalMenu.vue'
 import RoundMenu from '../components/RoundMenu.vue'
+import DropMenu from '../components/DropMenu.vue'
 export default {
   name : 'Menus',
   components : {
     VerticalMenu,
     HorizontalMenu,
-    RoundMenu
+    RoundMenu,
+    DropMenu
   }
 }
 </script>

@@ -55,7 +55,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem;
+  padding: 2rem   1rem;
 }
 
 #nav a {

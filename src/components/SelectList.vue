@@ -40,16 +40,27 @@ export default {
 }
 </script>
 
-<style>
+<style lang="css" scoped>
 * {
     transition: all 0.3s ease-in-out;
 
 }
 #SelectList {
+        --height : 3rem ;
+        --width : 15rem ;
+        --color1: rgba(35, 142, 49, 0.623);
+        --color2: rgba(35, 142, 49, 0.808);
+        --color3: rgba(255, 255, 255, 0.808);
+        --item-padding: 1rem 2rem;
+        
+        --border: 2px solid var(--color1);
+        --border-radius: 1rem;
+
+
     display: flex;
     flex-direction: column;  
     position: relative;
-    height: 3rem;
+    height: var(--height);
         
 
 
@@ -57,12 +68,12 @@ export default {
 
 .select {
     display: flex;
-    width: 15rem;
+    width: var(--width);
     justify-content: space-between;
     align-items: center;
-    border: 2px solid rgba(146, 184, 151, 0.808);
-    border-radius: 1rem;
-    height: 3rem;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    height: var(--height);
             
 
 }
@@ -70,8 +81,8 @@ export default {
     padding: 1rem 2rem;
     text-align: center;
     flex: 1;
-    color: rgba(35, 142, 49, 0.808);
-        cursor: pointer;
+    color: var(--color2);
+    cursor: pointer;
 
 }
 
@@ -93,15 +104,16 @@ export default {
 
 }
 .item{
-    padding: 1rem 2rem;
+    padding: var(--item-padding);
+    color: var(--color3);
 }
 .item:last-child {
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 .item:hover{
-    background-color: rgba(35, 142, 49, 0.808);
-    color: rgba(255, 255, 255, 0.808);
+    background-color: var(--color1);
+    color: var(--color3);
     transform: scale(1.02);
     cursor: pointer;
 }
@@ -109,16 +121,16 @@ export default {
 .list.active {
     visibility: visible;
     opacity: 1;
-    border: 2px solid rgba(35, 142, 49, 0.808);
-    background-color: rgba(35, 142, 49, 0.808);
+    border: 2px solid var(--color1);
+    background-color: var(--color1);
     
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 .select.active {
     border-radius: 0 !important;
-    border-top-left-radius: 1rem !important ;
-    border-top-right-radius: 1rem !important;
+    border-top-left-radius: var(--border-radius) !important ;
+    border-top-right-radius: var(--border-radius) !important;
         
 
 }

@@ -53,6 +53,10 @@ export default {
         /* --width:4rem ; */
         --btn-width : 2rem ;
         --btn-height : 2rem ;
+        --color1: #252525;
+        --color2: #e0e0e0;
+        --color3: rgba(38, 146, 38, 0.171);
+        --box-shadow: 0 0 5px 1px var(--color3);
 
         display: flex;
         align-items: center;
@@ -67,9 +71,9 @@ export default {
         height: var(--btn-width);
         width: var(--btn-width);
         border-radius: 100%;
-        background-color: #252525;
-        color: #e0e0e0;
-        box-shadow: 0 0 5px #aeb6cc;
+        background-color: var(--color1);
+        color: var(--color2);
+        box-shadow: var(--box-shadow);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -90,7 +94,7 @@ export default {
             border-radius: 100%;
             transition: all 0.5s 0s ease-in-out;
             z-index: 5;
-                    box-shadow: 0 0 5px #aeb6cc;
+            box-shadow: var(--box-shadow);
 
     }
 

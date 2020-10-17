@@ -59,6 +59,10 @@ export default {
         
         --btn-width : 2rem ;
         --btn-height : 2rem ;
+        --color1: #2318c9;
+        --color2: #e0e0e0;
+        --color3: rgba(38, 146, 38, 0.171);
+        --box-shadow: 0 0 5px 1px var(--color3);
 
 
         display: flex;
@@ -73,8 +77,8 @@ export default {
     .btn-square {
         height: var(--btn-width);
         width: var(--btn-height);
-        background-color: #2318c9;
-        color: #e0e0e0;
+        background-color: var(--color1);
+        color: var(--color2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -89,7 +93,7 @@ export default {
     }
     .bars {
         z-index: 10;
-        box-shadow: 0 0 5px #aeb6cc;
+        box-shadow: var(--box-shadow);
 
     }
     .menu-item {
@@ -98,7 +102,7 @@ export default {
             top: calc(50% - calc(var(--btn-height)/2));
             transition: all 0.5s 0s ease-in-out;
             z-index: 5;
-            opacity: 0.8;
+            opacity: 0.95;
     }
 
    

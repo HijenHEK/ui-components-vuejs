@@ -62,6 +62,10 @@ export default {
         --btn-width : 5rem ;
         --btn-height : 2rem ;
 
+        --color1: #c96818;
+        --color2: #e0e0e0;
+        --color3: #aeb6cc;
+        --box-shadow: 0 0 5px 1px var(--color3);
 
         display: flex;
         align-items: center;
@@ -76,8 +80,8 @@ export default {
         
         height: var(--btn-height);
         width: var(--btn-width);
-        background-color: #c96818;
-        color: #e0e0e0;
+        background-color: var(--color1);
+        color: var(--color2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -91,7 +95,7 @@ export default {
     }
     .bars {
         z-index: 10;
-                box-shadow: 0 0 5px #aeb6cc;
+                box-shadow: var(--box-shadow);
 
     }
     .menu-item {

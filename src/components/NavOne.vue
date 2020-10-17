@@ -50,6 +50,13 @@ export default {
         --color1: rgb(31, 82, 112);
         --color2: rgb(161, 151, 201);
         --color3: rgb(243, 220, 210);
+        --padding : 1rem 5rem ;
+        --nav-padding-collapse : 1rem 2rem ;
+        --nav-item-padding: 1rem 0.5rem;
+        --menu-right: 0 ;
+        --box-shadow: 0 0 5px 1px var(--color2);
+
+
         height: var(--height);
         width: var(--width);
         display: flex;
@@ -58,7 +65,8 @@ export default {
         padding: 1rem 5rem;
         background-color: var(--color1);
         color: var(--color3);
-        box-shadow: 0 2px 3px 0.5px var(--color2);
+        box-shadow: var(--box-shadow);
+        
     }
     
     #navOne * {
@@ -76,7 +84,7 @@ export default {
 
     }
         .toggler {
-            padding: 0.5rem;
+            
             width: var(--height);
             height: var(--height);
             display: none;
@@ -96,7 +104,7 @@ export default {
         }
         
         .nav-item{
-            padding: 1rem 0.5rem;
+            padding: var(--nav-item-padding);
             width: 100%;
         }
         .nav-item:hover {
@@ -119,6 +127,11 @@ export default {
   
         
     @media (max-width: 900px) {
+        #navOne {
+        
+        padding: var(--nav-padding-collapse);
+        
+        }
         .toggler {
             display: flex;
         }
@@ -136,12 +149,11 @@ export default {
             flex-direction: column;
             justify-content: center;
             top : var(--height) ;
-            right: 0 ;
+            right: var(--menu-right) ;
             visibility: collapse;
             height: 0;
             background-color: var(--color1);
-            
-
+            box-shadow: var(--box-shadow);
             
         }
         .menu.active {
@@ -149,6 +161,8 @@ export default {
             height: unset !important;
             opacity: 1;
             transition: all 0.3s ease-in;
+                    
+
         }
     }
 

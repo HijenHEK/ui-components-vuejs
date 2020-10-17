@@ -3,17 +3,21 @@
     <h1> Collapsible menus </h1>
 
    <div class="content">
-     <div class="col">
-       <h2>For icons</h2>
-        <RoundMenu />
-        <VerticalMenu />
-        <HorizontalMenu />
-     </div>
-     <div class="col">
-       <h2>For lists and links</h2>
-        <DropMenu />
+      <div class="group">
+            <h2>For icons</h2>
+            <div class="group-content">
+                <RoundMenu />
+              <VerticalMenu />
+              <HorizontalMenu />
+            </div>
+      </div>
+      <div class="group">
+            <h2>For lists and links</h2>
+            <div class="group-content">
 
-     </div>
+              <DropMenu />
+            </div>
+      </div>
    </div>
   </div>
 </template>
@@ -37,16 +41,38 @@ export default {
 <style lang="css">
   .content {
     display: flex;
-    justify-content: stretch;
-    align-items: center;
+    width: 100%;
+    flex-direction: row ;
+    justify-content: center;
+    align-items: stretch;
     height: 100%;
   }
-  .col {
+  .group {
     padding: 1rem 2rem;
-    height: 100%;
+    
+  }
+  .group-content {
+    padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+  }
+  @media (max-width: 845px) {
+    .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    height: 100%;
+    
+    }
+    .group-content {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
   }
 </style>

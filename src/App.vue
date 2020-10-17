@@ -1,14 +1,26 @@
 <template>
   <div id="app">
-    <div id="nav">
-
+    <div id="nav" :class="{'nav-hidden' : navHidden}">
+      
+      <div class="nav-toggler" @click="navHidden = !navHidden">
+          <font-awesome-icon icon="times"  v-if="!navHidden"/>
+          <font-awesome-icon icon="bars"  v-else/>
+      </div>
       <router-link to="/"> Home </router-link> 
       <router-link to="/Menus"> Collapsible menus </router-link>
     </div>
-    <router-view id="view"/>
+    <router-view class="view" :class="{'view-shrink' : !navHidden}" />
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      navHidden : true 
+    }
+  },
+}
+</script>
 <style>
 * {
   padding: 0;
@@ -40,7 +52,7 @@ body {
 
 #nav {
   padding: 1rem;
-  flex: 0.15;
+  width: 15rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -48,16 +60,26 @@ body {
   align-items: stretch;
   background-color: #ececec;
   box-shadow: 2px 2px 4px #ececec ;
+  position: absolute;
+  z-index: 5;
+  transition: all 0.3s ease-in-out;
 
 }
-#view {
-  flex : 0.85;
+.view {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   padding: 2rem   1rem;
+  transition: all 0.3s ease-out;
+
 }
 
+.nav-toggler {
+  margin-left: auto;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
 #nav a {
   font-weight: bold;
   color: #2c3e50;
@@ -66,4 +88,23 @@ body {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.nav-hidden {
+  flex: 0.15;
+  position: relative;
+  transform: translateX(-80%);
+
+}
+
+
+@media (min-width: 1000px) {
+  
+  .view-shrink{
+    width: calc(100% - 15rem);
+    margin-left:15rem ;
+    transition: all 0.3s ease;
+  }
+}
+
+
 </style>

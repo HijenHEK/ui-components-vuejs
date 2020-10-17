@@ -11,19 +11,19 @@
         </div> -->
 
         <div class="right">
-            <div class="toggler">
+            <div class="toggler" @click="collapse = !collapse">
                 <font-awesome-icon
                 class="icon"
                 
-                @click="collapse = !collapse"
+                
                 :icon="collapse ? 'times' : 'bars'"/>
             </div>
             <div :class="collapse ? 'menu active' : 'nav'" >
-                <div class="nav-item">aaa</div>
-                <div class="nav-item">aaa</div>
-                <div class="nav-item">asssssssaa</div>
-                <div class="nav-item">aaa</div>
-                <div class="nav-item">aaa</div>
+                <div class="nav-item" :class="{'active' : active == 1}" @click="active = 1">Home</div>
+                <div class="nav-item" :class="{'active' : active == 2}" @click="active = 2">Blog</div>
+                <div class="nav-item" :class="{'active' : active == 3}" @click="active = 3">Store</div>
+                <div class="nav-item" :class="{'active' : active == 4}" @click="active = 4">About</div>
+                <div class="nav-item" :class="{'active' : active == 5}" @click="active = 5">Contact</div>
             </div>
             
             
@@ -36,7 +36,8 @@
 export default {
     data() {
         return {
-            collapse : false
+            collapse : false,
+            active : 1 ,
         }
     },
 }
@@ -93,14 +94,25 @@ export default {
             display: flex;
             align-items: center;
         }
+        
         .nav-item{
             padding: 1rem 0.5rem;
+            width: 100%;
         }
         .nav-item:hover {
             background-color: var(--color2);
             color: var(--color1);
         }
-
+        .nav-item:active {
+            background-color: var(--color3);
+            color: var(--color2);
+            transition: all 0s ease-in-out !important;
+        }
+        .nav-item.active {
+            background-color: var(--color3);
+            color: var(--color2);
+            transition: all 0s ease-in-out !important;
+        }
         
     @media (max-width: 900px) {
         .toggler {

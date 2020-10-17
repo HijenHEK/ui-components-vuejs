@@ -9,7 +9,7 @@
                 </div>
                 
             </div>
-            <div class="list" :class="{'active' : listOpen}">
+            <div class="list" :class="{'active above' : listOpen}">
                 <div class="item" 
                 v-for="(el,index) in unselectedItems" 
                 :key="index" v-text="el"
@@ -60,7 +60,7 @@ export default {
     width: 15rem;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid rgba(35, 142, 49, 0.808);
+    border: 2px solid rgba(146, 184, 151, 0.808);
     border-radius: 1rem;
     height: 3rem;
             
@@ -110,6 +110,7 @@ export default {
     visibility: visible;
     opacity: 1;
     border: 2px solid rgba(35, 142, 49, 0.808);
+    background-color: rgba(35, 142, 49, 0.808);
     
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
@@ -121,4 +122,8 @@ export default {
         
 
 }
+.above {
+        z-index: 999;
+    }
+  
 </style>

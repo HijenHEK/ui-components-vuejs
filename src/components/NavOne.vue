@@ -18,7 +18,7 @@
                 
                 :icon="collapse ? 'times' : 'bars'"/>
             </div>
-            <div :class="collapse ? 'menu active' : 'nav'" >
+            <div :class="collapse ? 'menu active above' : 'nav'" >
                 <div class="nav-item" :class="{'active' : active == 1}" @click="active = 1">Home</div>
                 <div class="nav-item" :class="{'active' : active == 2}" @click="active = 2">Blog</div>
                 <div class="nav-item" :class="{'active' : active == 3}" @click="active = 3">Store</div>
@@ -113,6 +113,10 @@ export default {
             color: var(--color2);
             transition: all 0s ease-in-out !important;
         }
+    .above {
+        z-index: 999;
+    }
+  
         
     @media (max-width: 900px) {
         .toggler {

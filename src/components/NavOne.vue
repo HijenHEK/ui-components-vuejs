@@ -72,6 +72,7 @@ export default {
     #navOne * {
         cursor: pointer;
         transition: all 0.2s ease-in-out;
+        -webkit-tap-highlight-color: transparent;
     }
     #navOne *:active {
         outline: none;
@@ -81,6 +82,7 @@ export default {
         display: flex;
         align-items: center;
         position: relative;
+        
 
     }
         .toggler {
@@ -154,6 +156,7 @@ export default {
             height: 0;
             background-color: var(--color1);
             box-shadow: var(--box-shadow);
+            
             
         }
         .menu.active {

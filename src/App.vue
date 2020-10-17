@@ -34,7 +34,8 @@ p {
     margin-bottom: 5rem ;
   }
 body {
-  height: 100vh;
+    background-color: #f3f3f3;
+
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -61,6 +62,7 @@ body {
   background-color: #ececec;
   box-shadow: 2px 2px 4px #ececec ;
   position: absolute;
+  top:0 ;
   z-index: 5;
   transition: all 0.3s ease-in-out;
 

@@ -1,12 +1,12 @@
 <template>
-    <div id="dropMenu">
+    <div id="dropMenu" :class="{'above' : active}">
         <div class="menu-toggeler" 
             :class="{'toggler-active' : active}"
             >
             <font-awesome-icon
                 class="icon"
                 @click="active = !active"
-                icon="times"  v-if="MenuActive"/>
+                icon="times"  v-if="active"/>
             <font-awesome-icon
                 class="icon"
                 @click="active = !active"
@@ -24,6 +24,9 @@
 </template>
 
 <script>
+
+
+    
 export default {
     data() {
         return {
@@ -93,5 +96,9 @@ export default {
        cursor: pointer;
                transition: all 0.3s ease-in ;
 
+    }
+
+    .above {
+        z-index: 999;
     }
 </style>

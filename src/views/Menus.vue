@@ -14,6 +14,7 @@
       <div class="group">
             <h2>For lists and links</h2>
             <div class="group-content">
+              <select-list/>
 
               <DropMenu />
             </div>
@@ -26,19 +27,24 @@ import HorizontalMenu from '../components/HorizontalMenu.vue'
 import VerticalMenu from '../components/VerticalMenu.vue'
 import RoundMenu from '../components/RoundMenu.vue'
 import DropMenu from '../components/DropMenu.vue'
+import SelectList from '../components/SelectList.vue'
+
+
+
 export default {
   name : 'Menus',
   components : {
     VerticalMenu,
     HorizontalMenu,
     RoundMenu,
-    DropMenu
+    DropMenu,
+    SelectList
   }
 }
 </script>
 
 
-<style lang="css">
+<style >
   .content {
     display: flex;
     width: 100%;
@@ -58,6 +64,9 @@ export default {
     justify-content: space-evenly;
     align-items: center;
   }
+  .group-content > * {
+    margin-top:1rem;
+  }
   @media (max-width: 845px) {
     .content {
     display: flex;
@@ -73,6 +82,9 @@ export default {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+  }
+  .group-content > * {
+    margin:0 1rem;
   }
   }
 </style>

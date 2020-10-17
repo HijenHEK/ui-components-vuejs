@@ -63,7 +63,7 @@ body {
   box-shadow: 2px 2px 4px #ececec ;
   position: absolute;
   top:0 ;
-  z-index: 5;
+  z-index: 1000;
   transition: all 0.3s ease-in-out;
 
 }
@@ -72,7 +72,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2rem   1rem;
+  padding: 2rem   3rem;
   transition: all 0.3s ease-out;
 
 }

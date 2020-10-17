@@ -8,6 +8,7 @@
       </div>
       <router-link to="/"> Home </router-link> 
       <router-link to="/Menus"> Collapsible menus </router-link>
+      <router-link to="/Navbars"> Responsive navbars </router-link>
     </div>
     <router-view class="view" :class="{'view-shrink' : !navHidden}" />
   </div>

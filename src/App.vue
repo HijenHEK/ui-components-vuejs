@@ -59,7 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  align-items: stretch;
+  align-items: flex-start;
   background-color: #ececec;
   box-shadow: 2px 2px 4px #ececec ;
   position: absolute;

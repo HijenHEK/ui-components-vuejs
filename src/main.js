@@ -7,11 +7,13 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import $ from 'jquery'
 window.$ = $ 
 
-library.add(faBars , faTimes , faArrowUp, faArrowDown)
+library.add(faBars , faTimes , faArrowUp, faArrowDown  ,faHome)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

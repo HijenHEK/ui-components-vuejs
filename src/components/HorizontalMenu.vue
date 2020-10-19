@@ -59,13 +59,21 @@ export default {
      */
 
     #VerticalMenu {
-        --btn-width : 5rem ;
-        --btn-height : 2rem ;
+        --font-size : 2rem ;
+        --padding : 1rem ;
+        --btn-width : calc(var(--font-size)*1.5) ;
+        --btn-height : var(--btn-width) ; 
 
         --color1: #c96818;
         --color2: #e0e0e0;
         --color3: #aeb6cc;
         --box-shadow: 0 0 5px 1px var(--color3);
+        
+        --spacing : calc(var(--btn-width) * 0.1);
+        --item-opacity : 0.98 ;
+
+        font-size: var(--font-size);
+
 
         display: flex;
         align-items: center;
@@ -105,28 +113,30 @@ export default {
             transition: all 0.5s 0s ease-in-out;
             z-index: 5;
             opacity: 0.9;
-
+            opacity: 0;
 
     }
-
+    .active {
+       opacity: 1;
+   }
    
-    .active:nth-child(2) {
-        transform: translateX(110%);
+     .active:nth-child(2) {
+        transform: translateX(calc(100% + var(--spacing)));
     }
     
     .active:nth-child(3) {
-        transform: translateX(220%);
+        transform: translateX(calc(200% + 2*var(--spacing)));
     }
     
     .active:nth-child(4) {
-        transform: translateX(330%);
+        transform: translateX(calc(300% + 3*var(--spacing)));
     }
     
     .active:nth-child(5) {
-        transform : translateX(440%);
+        transform : translateX(calc(400% + 4*var(--spacing)));
     }
     
-  .above {
+    .above {
         z-index: 999;
     }
 </style>

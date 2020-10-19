@@ -59,6 +59,9 @@ export default {
         --box-shadow: 0 0 5px 1px var(--color3);
         --spacing : calc(var(--btn-width) * 1.5);
         --font-size : calc(var(--btn-width)*0.5) ;
+
+
+
         display: flex;
         align-items: center;
         justify-content: center;
@@ -80,6 +83,7 @@ export default {
         align-items: center;
         justify-content: center;
         cursor: pointer;
+
     }
     .btn-circle:hover {
         opacity: 1; 
@@ -96,13 +100,16 @@ export default {
             border-radius: 100%;
             transition: all 0.5s 0s ease-in-out;
             z-index: 5;
+            opacity: 0;
 
     }
 
 
     /* adjust rotation deg % with number of element and positioning 
     translateX represent distance between menu item and menu toggler */
-    
+    .active {
+       opacity: 1;
+   }
     .active:nth-child(2) {
         transform: rotate(45deg) translateX(var(--spacing));
     }

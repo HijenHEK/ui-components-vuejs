@@ -56,22 +56,25 @@ export default {
     
     #VerticalMenu {
         /* --width:auto ; */
-        
-        --btn-width : 2rem ;
-        --btn-height : 2rem ;
+        --font-size : 2rem ;
+        --padding : 1rem ;
+        --btn-width : 100% ;
+        --btn-height : var(--btn-width) ;        
         --color1: #2318c9;
         --color2: #e0e0e0;
         --color3: rgba(38, 146, 38, 0.171);
         --box-shadow: 0 0 5px 1px var(--color3);
-
-
+        
+        --spacing : calc(var(--btn-width) * 0.1);
+        /* --font-size : calc(var(--btn-width) * 0.5) ; */
+        --item-opacity : 0.98 ;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
+        font-size: var(--font-size);
         /* width: var(--width); */
         /* margin: 0 0 3rem 3rem; */
-        
 
     }
     .btn-square {
@@ -83,12 +86,13 @@ export default {
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        
+        padding: var(--padding);
         
     }
     .btn-square:hover {
         opacity: 1; 
         transition: opacity 0.1s ease-in;
+        
         transform: translateY(1px);
     }
     .bars {
@@ -102,28 +106,31 @@ export default {
             top: calc(50% - calc(var(--btn-height)/2));
             transition: all 0.5s 0s ease-in-out;
             z-index: 5;
-            opacity: 0.95;
+            opacity: var(--item-opacity);
+            opacity: 0;
+            width: 100%;
     }
 
-   
-    .active:nth-child(2) {
-        transform: translateY(110%);
+   .active {
+       opacity: 1;
+   }
+     .active:nth-child(2) {
+        transform: translateY(calc(100% + var(--spacing)));
     }
     
     .active:nth-child(3) {
-        transform: translateY(220%);
+        transform: translateY(calc(200% + 2*var(--spacing)));
     }
     
     .active:nth-child(4) {
-        transform: translateY(330%);
+        transform: translateY(calc(300% + 3*var(--spacing)));
     }
     
     .active:nth-child(5) {
-        transform : translateY(440%);
+        transform : translateY(calc(400% + 4*var(--spacing)));
     }
     
     .above {
         z-index: 999;
     }
-  
 </style>

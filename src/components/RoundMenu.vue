@@ -51,17 +51,19 @@ export default {
     
     #RoundMenu {
         /* --width:4rem ; */
-        --btn-width : 2rem ;
-        --btn-height : 2rem ;
+        --btn-width : 3rem ;
+        --btn-height : var(--btn-width) ;
         --color1: #252525;
         --color2: #e0e0e0;
         --color3: rgba(38, 146, 38, 0.171);
         --box-shadow: 0 0 5px 1px var(--color3);
-
+        --spacing : calc(var(--btn-width) * 1.5);
+        --font-size : calc(var(--btn-width)*0.5) ;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
+        font-size: var(--font-size);
         /* width: var(--width);
         margin: 0 0 3rem 3rem; */
         
@@ -94,34 +96,33 @@ export default {
             border-radius: 100%;
             transition: all 0.5s 0s ease-in-out;
             z-index: 5;
-            box-shadow: var(--box-shadow);
 
     }
 
 
     /* adjust rotation deg % with number of element and positioning 
     translateX represent distance between menu item and menu toggler */
-   
+    
     .active:nth-child(2) {
-        transform: rotate(45deg) translateX(50px);
+        transform: rotate(45deg) translateX(var(--spacing));
     }
     .active:nth-child(2) > div {
-        transform: rotate(-45deg);
+        transform: rotate(-45deg) ;
     }
     .active:nth-child(3) {
-        transform: rotate(90deg) translateX(50px);
+        transform: rotate(90deg) translateX(var(--spacing));
     }
     .active:nth-child(3) > div {
-        transform: rotate(-90deg);
+        transform: rotate(-90deg) ;
     }
     .active:nth-child(4) {
-        transform: rotate(135deg) translateX(50px);
+        transform: rotate(135deg)  translateX(var(--spacing));
     }
      .active:nth-child(4) > div {
-        transform: rotate(-135deg);
+        transform: rotate(-135deg) ;
     }
     .active:nth-child(5) {
-        transform : rotate(180deg) translateX(50px);
+        transform : rotate(180deg)  translateX(var(--spacing));
     }
     
     .active:nth-child(5) > div {

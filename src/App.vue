@@ -3,12 +3,22 @@
     <div id="nav" :class="{'nav-hidden' : navHidden}">
       
       <div class="nav-toggler" @click="navHidden = !navHidden">
-          <font-awesome-icon icon="times"  v-if="!navHidden"/>
-          <font-awesome-icon icon="bars"  v-else/>
+          <font-awesome-icon class="icon" icon="times"  v-if="!navHidden"/>
+          <font-awesome-icon class="icon" icon="bars"  v-else/>
       </div>
-      <router-link to="/"> Home </router-link> 
-      <router-link to="/Menus"> Collapsible menus </router-link>
-      <router-link to="/Navbars"> Responsive navbars </router-link>
+      <router-link class="link" to="/">
+          <div class="name">Home</div>
+          <font-awesome-icon class="icon" icon="home" />
+       </router-link> 
+        <router-link class="link" to="/Menus">
+          <div class="name">Menus and Lists</div>
+          <font-awesome-icon class="icon" icon="bars" />
+      </router-link>
+      <router-link class="link" to="/Navbars">
+        <div class="name">Responsive NavBars</div>
+        <!-- <font-awesome-icon icon="ellipsis" /> -->
+        <div class="icon">N</div>
+      </router-link>
     </div>
     <router-view class="view" :class="{'view-shrink' : !navHidden}" />
   </div>
@@ -36,6 +46,7 @@ p {
   }
 body {
     background-color: #f3f3f3;
+    color: rgb(1,56,112);
 
 }
 #app {
@@ -43,29 +54,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  background-color: #f3f3f3;
-
-}
-
-#nav {
-  padding: 1rem;
-  width: 15rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  align-items: flex-start;
-  background-color: #ececec;
-  box-shadow: 2px 2px 4px #ececec ;
-  position: absolute;
-  top:0 ;
-  z-index: 1000;
-  transition: all 0.3s ease-in-out;
+  background-color: #EDF5E1;
 
 }
 .view {
@@ -75,28 +68,63 @@ body {
   flex-direction: column;
   padding: 2rem   3rem;
   transition: all 0.3s ease-out;
+  margin-left:2rem ;
 
 }
+#nav {
+  width: 15rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: flex-start;
+  background-color: #65E191;
+  box-shadow: 2px 2px 4px #65E191 ;
+  position: absolute;
+  top:0 ;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
 
 .nav-toggler {
   margin-left: auto;
   cursor: pointer;
   font-size: 1.5rem;
 }
-#nav a {
+#nav .link {
   font-weight: bold;
-  color: #2c3e50;
+  color: rgb(1,56,112);
+  text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
 }
+#nav .link.router-link-exact-active {
+  color:  #EBF6DE;
+  background-color: #399583;
+  box-shadow: 2px 2px 4px #399583 ;
+  transition: all 0.2s ease-in-out;
 
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
+#nav .link .icon {
+    font-size: 1.5rem;
+    max-width: 1.5rem;
+    text-align: center;
+}
+#nav > * {
+  padding: 1rem 0.7rem;
+
+}
+/* #nav a.router-link-exact-active {
+} */
 
 .nav-hidden {
   flex: 0.15;
   position: relative;
   transform: translateX(-80%);
-
 }
 
 
